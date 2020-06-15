@@ -16,7 +16,7 @@ epoch = 'epoch_36.pth'
 ##############################
 
 model = init_detector(config_fname, checkpoint_path+epoch)
-# print (model)
+
 
 # List of images in the image_path
 imgs = glob.glob(image_path)
@@ -30,9 +30,6 @@ for i in imgs:
     channels = img.shape[2] 
 
     print('Image Dimension    : ',dimensions)
-    print('Image Height       : ',height)
-    print('Image Width        : ',width)
-    print('Number of Channels : ',channels) 
     
     result = inference_detector(model, i)
     print ("The result is = ",result)
@@ -42,10 +39,6 @@ for i in imgs:
     res_cell = []
 
     root = etree.Element("document")
-
-    #print ("[0][0]",result[0][0])
-    #print ("[0][1]",result[0][1])
-    #print ("[0][2]",result[0][2])
 
     ## for border
     for r in result[0][0]:

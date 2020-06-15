@@ -14,26 +14,12 @@ def extractTextBless(img):
     cv2.rectangle(img_np,(0,0),(w+14,h+14),(255,255,255),30)
     img_np[7:h+7,7:w+7]=img
 
-    '''directory = '/content/drive/My Drive/Optum/Dataset/images'
-    os.chdir(directory)
-    
-    filename = "text.jpg"
-    cv2.imwrite(filename, img_np)'''
-
-    # cv2_imshow(img_np)
     gray = cv2.cvtColor(img_np, cv2.COLOR_BGR2GRAY) 
     # blur = cv2.GaussianBlur(gray,(5,5),0)
     ret, thresh1 = cv2.threshold(gray, 0, 255, cv2.THRESH_OTSU | cv2.THRESH_BINARY_INV)
     rect_kernel = cv2.getStructuringElement(cv2.MORPH_RECT, (3, 1))
     dilation = cv2.dilate(thresh1, rect_kernel, iterations = 2)
 
-    '''directory = '/content/drive/My Drive/Optum/Dataset/images'
-    os.chdir(directory)
-    
-    filename = "dialation.jpg"
-    cv2.imwrite(filename, dilation)'''
-    
-    # cv2_imshow(dilation)
     contours, hierarchy = cv2.findContours(dilation, cv2.RETR_EXTERNAL,cv2.CHAIN_APPROX_NONE)
     for cnt in (contours): 
         if cv2.contourArea(cnt) < 20:
@@ -239,11 +225,6 @@ def borderless(table, image, res_cells):
       cv2.line(im2,(table[0],c),(table[2],c),(255,0,0),1)
     
     # cv2_imshow(im2)
-    '''directory = '/content/drive/My Drive/Optum/Dataset/images'
-    os.chdir(directory)
-    
-    filename = "lines_detected.jpg"
-    cv2.imwrite(filename, image)'''
     print("table:",table)
     # for r in row:
     #   cv2.line(im2,(r,table[1]),(r,table[3]),(0,255,0),1)
@@ -259,12 +240,6 @@ def borderless(table, image, res_cells):
             cellBoxes.append([box[0]+cell[0], box[1]+cell[1], cell[2], cell[3]])
             cv2.rectangle(img4, (box[0]+cell[0], box[1]+cell[1]), (box[0]+cell[0]+cell[2], box[1]+cell[1]+cell[3]), (255,0,0), 2)
 
-
-    '''directory = '/content/drive/My Drive/Optum/Dataset/images'
-    os.chdir(directory)
-    
-    filename = "cell_boxes.jpg"
-    cv2.imwrite(filename, img4)'''
     # cv2_imshow(img4)
 
     the_last_y = -1
@@ -313,12 +288,6 @@ def borderless(table, image, res_cells):
     for bx in MergedBoxes:
       cv2.rectangle(im3, (bx[0], bx[1]), (bx[2], bx[3]), (255,0,0), 2)
 
-
-    '''directory = '/content/drive/My Drive/Optum/Dataset/images'
-    os.chdir(directory)
-    
-    filename = "cell_boxes_merged.jpg"
-    cv2.imwrite(filename, im3)'''
     # cv2_imshow(im3)
     TextChunks = []
     TextChunks.append([])
@@ -378,13 +347,6 @@ def borderless(table, image, res_cells):
       for tbox in r:
         cv2.rectangle(im2, (tbox[0], tbox[1]), (tbox[2], tbox[3]), colors[no%len(colors)], 1)
         # print(tbox)
-
-
-    '''directory = '/content/drive/My Drive/Optum/Dataset/images'
-    os.chdir(directory)
-    
-    filename = "text_chunks.jpg"
-    cv2.imwrite(filename, table_im2)'''
     # cv2_imshow("text chunks", im2)
     # cv2.waitKey(0)
 
