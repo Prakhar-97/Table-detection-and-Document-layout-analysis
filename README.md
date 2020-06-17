@@ -51,7 +51,7 @@ Checkpoints of the Models that have been trained :
 You can refer to <a href="https://github.com/DevashishPrasad/CascadeTabNet">Dataset</a> to have a better understanding of the Dataset
 
 2. Document layout Analysis:
-You can refer to <a href="https://github.com/ibm-aur-nlp/PubLayNet">Dataset</a> to have a better understanding of the dataset.
+You can refer to <a href="https://dax-cdn.cdn.appdomain.cloud/dax-publaynet/1.0.0/PubLayNet.html">Dataset</a> to have a better understanding of the dataset.
 
 ## Training
 
