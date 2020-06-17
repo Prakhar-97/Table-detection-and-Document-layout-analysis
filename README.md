@@ -7,7 +7,6 @@ Using State of the Art techniques for table detection and Document layout analys
 <br>
 
 <pre>
-pip install -q mmcv terminaltables
 git clone -'https://github.com/open-mmlab/mmdetection.git'
 cd "mmdetection"
 python setup.py install
@@ -26,7 +25,7 @@ Config file for the Models :
 
 
 1. For table detection
-<a href="Document layout analysis/Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py/">cascade_mask_rcnn_hrnetv2p_w32_20e.py</a><br>
+<a href="Document layout analysis/Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py/">config_file</a><br>
 
 2. For Document Analysis
 <a href="CascadeTab/Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py/">cascade_mask_rcnn_hrnetv2p_w32_20e.py</a><br>
