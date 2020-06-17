@@ -25,10 +25,10 @@ Config file for the Models :
 
 
 1. For table detection
-<a href="Document layout analysis/Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py/">config_file</a><br>
+<a href="CascadeTab/Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py/">Config_file</a><br>
 
 2. For Document Analysis
-<a href="CascadeTab/Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py/">cascade_mask_rcnn_hrnetv2p_w32_20e.py</a><br>
+<a href="Document layout analysis/Config/cascade_mask_rcnn_hrnetv2p_w32_20e.py">Config_file</a><br>
 
 Note: Config paths are only required to change during training
 
